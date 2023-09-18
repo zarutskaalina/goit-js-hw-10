@@ -7,6 +7,8 @@ const selectCat = document.querySelector('.breed-select');
 const catInfo = document.querySelector('.cat-info');
 const loader = document.querySelector('.loader');
 
+loader.classList.replace('loader', 'is-hidden');
+
 fetchBreeds()
   .then(breeds => {
     renderBreedsList(breeds);
