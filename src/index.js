@@ -1,5 +1,5 @@
 import { fetchBreeds, fetchCatByBreed } from './cat-api';
-import Notiflix from 'notiflix';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import SlimSelect from 'slim-select';
 import 'slim-select/dist/slimselect.css';
 
@@ -53,13 +53,8 @@ function setOutput(e) {
       catInfo.classList.remove('is-hidden');
     })
     .catch(error => {
-      // error = errorText;
-
-      Notiflix.Notify.failure(
-        'Oops! Something went wrong! Try reloading the page!',
-        {
-          position: 'center-center',
-        }
-      );
+      Notify.failure('Oops! Something went wrong! Try reloading the page!', {
+        position: 'center-center',
+      });
     });
 }
